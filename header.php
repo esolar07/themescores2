@@ -25,16 +25,16 @@
 	
 	<?php if ( is_front_page() ) : ?>
 
-	<figure class="header-image">
-		<?php the_header_image_tag(); ?>
-	</figure>
+		<figure class="header-image">
+			<?php the_header_image_tag(); ?>
+		</figure>
 
 	<?php endif; ?>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 
-			<?php the_custom_logo( ); ?>
+			<?php the_custom_logo(); ?>
 
 			<div class="site-branding__text">
 				<?php
@@ -55,7 +55,7 @@
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'themescores2' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
