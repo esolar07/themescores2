@@ -70,11 +70,11 @@ li{
     position: relative;
 }
 
-a{
+.main-navigation a{
     display: inline-block;
     padding: .5em 1em .5em 0;
     //width: 100%;
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     &:hover,
     &:focus{

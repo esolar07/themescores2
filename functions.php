@@ -173,13 +173,21 @@ add_action( 'widgets_init', 'themescores2_widgets_init' );
  */
 function themescores2_scripts() {
 
+	$themescores2_l10n = array(
+		'expand'=> __('Expand child menu', 'themescores2'), 
+		'collapse'=> __('Collapse child menu', 'themescores2'),
+	);
+
 	// Adding Google Font Styles: PT Serif & Source Sans Pro 
 	wp_enqueue_style( 'themescores2-fonts', themescores2_fonts_url() );
 
 	wp_enqueue_style( 'themescores2-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'themescores2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'themescores2-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 
+	wp_localize_script( 'themescores2-navigation', 'themescores2ScreenReaderText', $themescores2_l10n);
+	 
+	
 	wp_enqueue_script( 'themescores2-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
